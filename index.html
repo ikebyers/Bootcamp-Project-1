@@ -5,15 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainy Day Fund</title>
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/form.css" />
     
-    <script defer src="./js/logic.js" type="text/javaScript"></script>
-    <script defer src="./js/form.js" type="text/javaScript"></script>
+    <script defer src="./assets/js/logic.js" type="text/javaScript"></script>
+    <script defer src="./assets/js/form.js" type="text/javaScript"></script>
 </head>
 
 <body>
-    
+    <header>
+        <h1>Rainy Day Fund</h1>
+        <h2>Enter income, any expenses, and any goals you might have.</h2>
+    </header>
+
+    <main>
+        <aside>
+            <h3>Enter your monthly income.</h3>
+            <form id="income">
+                <label for="income">Monthly Income</label>
+                <input type="number" id="income" />
+            </form>
+
+            <h3>Enter your monthly expenses.</h3>
+            <form id="expense">
+                <label for="rent">Rent</label>
+                <input type="number" id="rent" />
+
+                <label for="util">Utilities</label>
+                <input type="number" id="util" />
+
+                <label for="food">Groceries</label>
+                <input type="number" id="food" />
+
+                <label for="gas">Gas/Trasportation</label>
+                <input type="number" id="gas" />
+
+                <details id="insurance-details">
+                    <summary id="insurance-summary">Insurance</summary>
+                    <div class="dropdown-insurance">
+                        <label for="car-insurance">Car Insurance</label>
+                        <input type="number" id="car-insurance" />
+
+                        <label for="home-insurance">Home Insurance</label>
+                        <input type="number" id="home-insurance" />
+
+                        <label for="life-insurance">Life Insurance</label>
+                        <input type="number" id="life-insurance" />
+                    </div>
+                </details>
+
+                <label for="subscribe">Subscriptions</label>
+                <input type="number" id="subscribe" />
+
+                <label for="other">Other</label>
+                <input type="number" id="other" />
+
+                    <!--Add more expenses button goes here-->
+            </form>
+        </aside>
+
+        <div class="right-section">
+            <h3>Enter your financial goals.</h3>
+            <form id="goals-form">
+                <label for="goal">Goal Name</label>
+                <input type="text" id="goal" />
+
+                <label for="goal-amount">Goal Amount</label>
+                <input type="number" id="goal-amount" />
+
+                <label for="months">How many months?</label>
+                <input type="number" id="months" />
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <button type="submit" class="submit-btn">Submit All</button>
+    </footer>
 </body>
 
 </html>
