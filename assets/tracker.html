@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,56 @@
 
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/tracker.css" />
-    
+
     <script defer src="./js/logic.js" type="text/javaScript"></script>
     <script defer src="./js/tracker.js" type="text/javaScript"></script>
 </head>
 
 <body>
-    
+    <header>
+        <h1>Rainy Day Fund</h1>
+    </header>
+
+    <main>
+        <aside>
+            <section class="card">
+                <h2>Income</h2>
+                <label>Monthly Income:</label>
+                <p id="monthlyIncome"></p>
+                <button>Edit Income</button>
+                <br>
+                <h2>Expenses</h2>
+                <label>Housing:</label>
+                <p id="housing"></p>
+                <label>Utilities:</label>
+                <p id="utilities"></p>
+                <label>Groceries:</label>
+                <p id="groceries"></p>
+                <label>Gas/Transportation:</label>
+                <p id="gasTransportation"></p>
+                <label>Insurance:</label>
+                <p id="insurance"></p>
+                <label>Subscriptions:</label>
+                <p id="subscriptions"></p>
+                <label>Other:</label>
+                <p id="other"></p>
+                <button>Add Expense</button>
+            </section>
+        </aside>
+
+        <section class="card">
+            <h2>Goals</h2>
+            <label><span id="goalOne">Goal One:</span></label>
+            <p>In order to reach your savings goal of <span id="goal-cost">goal cost</span></p>, you will need to save
+            <span id="monthlyCost">monthly cost</span>, for <span id="goalTime">goal time</span> months.
+            <br>
+            <button>Add Goal</button>
+        </section>
+
+
+
+    </main>
+
 </body>
 
 </html>
