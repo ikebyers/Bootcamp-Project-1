@@ -27,27 +27,33 @@
                 <p id="monthlyIncome"></p>
                 <button class="button" id="editIncomeBtn">Edit Income</button>
                 <br>
-                <h2 class="headerTwo" id="expensesHeader">Expenses</h2>
-                <label for="housing">Housing:</label>
-                <p id="housing"></p>
-                <label for="utilities">Utilities:</label>
-                <p id="utilities"></p>
-                <label for="groceries">Groceries:</label>
-                <p id="groceries"></p>
-                <label for="gasTransportation">Gas/Transportation:</label>
-                <p id="gasTransportation"></p>
-                <label for="health-insurance">Health Insurance:</label>
-                <p id="health-insurance"></p>
-                <label for="car-insurance">Car Insurance:</label>
-                <p id="car-insurance"></p>
-                <label for="home-insurance">Home Insurance:</label>
-                <p id="home-insurance"></p>
-                <label for="life-insurance">Life Insurance:</label>
-                <p id="life-insurance"></p>
-                <label for="subscriptions">Subscriptions:</label>
-                <p id="subscriptions"></p>
-                <label for="other">Other:</label>
-                <p id="other"></p>
+                <details id="expensesDetail">
+                    <summary id="expensesSummary">Expenses</summary>
+                    <div class="dropdownExpenses">
+                        <label for="housing">Housing:</label>
+                        <p id="housing"></p>
+                        <label for="utilities">Utilities:</label>
+                        <p id="utilities"></p>
+                        <label for="groceries">Groceries:</label>
+                        <p id="groceries"></p>
+                        <label for="gasTransportation">Gas/Transportation:</label>
+                        <p id="gasTransportation"></p>
+                        <label for="health-insurance">Health Insurance:</label>
+                        <p id="health-insurance"></p>
+                        <label for="car-insurance">Car Insurance:</label>
+                        <p id="car-insurance"></p>
+                        <label for="home-insurance">Home Insurance:</label>
+                        <p id="home-insurance"></p>
+                        <label for="life-insurance">Life Insurance:</label>
+                        <p id="life-insurance"></p>
+                        <label for="subscriptions">Subscriptions:</label>
+                        <p id="subscriptions"></p>
+                        <label for="other">Other:</label>
+                        <p id="other"></p>
+                        <!-- TODO: make sure any additional "other" expenses populate above the "Add Expense" button -->
+                    </div>  
+                    
+                </details>
                 <button class="button" id="addExpenseBtn">Add Expense</button>
             </section>
         </aside>
