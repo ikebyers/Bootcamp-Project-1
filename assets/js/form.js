@@ -1,15 +1,20 @@
 document.getElementById('add-expense-btn').addEventListener('click', function() {
+
     const expenseName = prompt('Enter the name of the new expense:');
     
     if (expenseName) {
+        // Create a new label element for the new expense
+
         const newLabel = document.createElement('label');
         newLabel.setAttribute('for', expenseName.toLowerCase().replace(/\s+/g, '-'));
         newLabel.textContent = expenseName;
+
 
         const newInput = document.createElement('input');
         newInput.setAttribute('type', 'number');
         newInput.setAttribute('id', expenseName.toLowerCase().replace(/\s+/g, '-'));
         newInput.setAttribute('placeholder', `Enter amount for ${expenseName}`);
+
 
         const additionalExpensesContainer = document.getElementById('additional-expenses');
         additionalExpensesContainer.appendChild(newLabel);
@@ -20,11 +25,14 @@ document.getElementById('add-expense-btn').addEventListener('click', function() 
     }
 });
 
+
 document.addEventListener('DOMContentLoaded', function() {
+
     const submitBtn = document.getElementById('submit-all-btn');
 
     if (submitBtn) {
         submitBtn.addEventListener('click', function() {
+
             let isValid = true;
 
             const errorMessages = document.querySelectorAll('.error-message');
@@ -45,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const goalAmount = getNumericInput('goal-amount', 'goal amount');
             const months = getNumericInput('months', 'months');
 
+
             const goalInput = document.getElementById('goal');
             let goalName = '';
 
@@ -56,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     console.log('Goal name:', goalName);
                 }
+
             }
 
             if (months <= 0) {
@@ -80,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
 // Modal button and modal elements
 const modalButton = document.getElementById('modal-button');
 const modal = document.getElementById('info-modal');
@@ -98,5 +109,4 @@ closeButton.addEventListener('click', () => {
 modal.querySelector('.modal-background').addEventListener('click', () => {
     modal.classList.remove('is-active');
 });
-
 
