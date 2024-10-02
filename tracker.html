@@ -27,34 +27,59 @@
                 <p id="monthlyIncome"></p>
                 <button class="button" id="editIncomeBtn">Edit Income</button>
                 <br>
-                <h2 class="headerTwo" id="expensesHeader">Expenses</h2>
-                <label for="housing">Housing:</label>
-                <p id="housing"></p>
-                <label for="utilities">Utilities:</label>
-                <p id="utilities"></p>
-                <label for="groceries">Groceries:</label>
-                <p id="groceries"></p>
-                <label for="gasTransportation">Gas/Transportation:</label>
-                <p id="gasTransportation"></p>
-                <label for="car-insurance">Car Insurance:</label>
-                <p id="car-insurance"></p>
-                <label for="home-insurance">Home Insurance:</label>
-                <p id="home-insurance"></p>
-                <label for="life-insurance">Life Insurance:</label>
-                <p id="life-insurance"></p>
-                <label for="subscriptions">Subscriptions:</label>
-                <p id="subscriptions"></p>
-                <label for="other">Other:</label>
-                <p id="other"></p>
+                <br>
+                <details id="expensesDetail">
+                    <summary id="expensesSummary">Expenses</summary>
+                    <div class="dropdownExpenses">
+                        <label for="housing">Housing:</label>
+                        <p id="housing"></p>
+                        <label for="utilities">Utilities:</label>
+                        <p id="utilities"></p>
+                        <label for="groceries">Groceries:</label>
+                        <p id="groceries"></p>
+                        <label for="gasTransportation">Gas/Transportation:</label>
+                        <p id="gasTransportation"></p>
+                        <label for="health-insurance">Health Insurance:</label>
+                        <p id="health-insurance"></p>
+                        <label for="car-insurance">Car Insurance:</label>
+                        <p id="car-insurance"></p>
+                        <label for="home-insurance">Home Insurance:</label>
+                        <p id="home-insurance"></p>
+                        <label for="life-insurance">Life Insurance:</label>
+                        <p id="life-insurance"></p>
+                        <label for="subscriptions">Subscriptions:</label>
+                        <p id="subscriptions"></p>
+                        <label for="other">Other:</label>
+                        <p id="other"></p>
+                        <!-- TODO: make sure any additional "other" expenses populate above the "Add Expense" button -->
+                    </div>  
+                    
+                </details>
+
+                <br>
                 <button class="button" id="addExpenseBtn">Add Expense</button>
+                <br>
+                <br>
+
+
+                <h2>Total Expenses</h2>
+                <section>
+                    <label for="totalExpenses">Total Expenses: </label>
+                    <span id="totalExpenses">$0.00</span>
+                </section>
+
+                <h2>Working Budget</h2>
+                <section>
+                    <label for="workingBudget">Working Budget: </label>
+                    <span id="workingBudget">$0.00</span>
+                </section>
             </section>
         </aside>
 
         <section class="card">
             <h2>Goals</h2>
             <label><span id="goalOne">Goal One:</span></label>
-            <p>In order to reach your savings goal of <span id="goal-amount">goal cost</span></p>, you will need to save
-            <span id="goal-cost">monthly cost</span> for <span id="goal-months">goal time</span> months.
+            <p>In order to reach your savings goal of <span id="goal-amount">goal cost</span>, you will need to save <span id="goal-cost">monthly cost</span> for <span id="goal-months">goal time</span> months.</p>
             <br>
             <button class="button" id="addGoalBtn">Add Goal</button>
         </section>
