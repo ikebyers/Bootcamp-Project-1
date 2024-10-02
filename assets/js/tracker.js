@@ -23,10 +23,6 @@ function displayFormData(formData) {
     }
 };
 
-
-
-
-
 // Function to calculate total expenses
 function calculateTotalExpenses(formData) {
     if (!formData || !formData.expenses) {
@@ -113,6 +109,5 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('No form data found.');
     }
 });
-
 
 
