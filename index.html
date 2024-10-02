@@ -5,17 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainy Day Fund</title>
 
-    <link rel="stylesheet" href="./assets/css/reset.css" /> 
-    <link rel="stylesheet" href="./assets/css/form.css" />
+
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/form.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     
-    <script defer src="./assets/js/logic.js" type="text/javaScript"></script>
+    <script defer src="./assets/JS/logic.js" type="text/javaScript"></script>
     <script defer src="./assets/js/form.js" type="text/javaScript"></script>
 </head>
 
 <body>
     <header>
-        <h1>Rainy Day Fund</h1>
-        <h2>Enter income, any expenses, and any goals you might have.</h2>
+
+        <h1 class="title">Rainy Day Fund</h1>
+        <h2 class="subtitle">Enter income, any expenses, and any goals you might have.</h2>
+
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <!-- Add any branding here if needed -->
+                </a>
+        
+                <!-- Modal trigger button in the right corner -->
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <button class="button is-info" id="modal-button">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+         </nav>
+        
+        <!-- Bulma modal component -->
+        <div class="modal" id="info-modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <!-- Modal content -->
+                <div class="box">
+                    <h3 class="title">Form Explanation</h3>
+                    <p>This form helps you manage and track your monthly budget, including income, expenses, and financial goals. Please enter your monthly income, specify your expenses, and define your financial goals with an estimated number of months to achieve them.</p>
+                    <p>Directions:</p>
+                    <ul>
+                        <li>1. Enter your monthly income in the respective field.</li>
+                        <li>2. Fill in your expenses in the fields provided, or add more expenses as needed.</li>
+                        <li>3. Set a financial goal and the number of months you want to achieve it in.</li>
+                        <li>4. Submit the form to save your data and track your budget on the next screen.</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+        
+
+        
     </header>
 
     <main>
