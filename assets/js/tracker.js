@@ -23,6 +23,11 @@ function displayFormData(formData) {
     }
 };
 
+// Function to calculate total expenses
+function calculateTotalExpenses(formData) {
+    if (!formData || !formData.expenses) {
+        console.log('No expense data found to calculate.');
+        return 0;
 
 
 
@@ -34,6 +39,7 @@ function calculateTotalExpenses(formData) {
         return 0;
     }
 
+    // Sum all the expenses
     // Sum all the expenses
     const rent = parseFloat(formData.expenses.rent) || 0;
     const utilities = parseFloat(formData.expenses.utilities) || 0;
@@ -65,11 +71,77 @@ function calculateWorkingBudget(formData, totalExpenses) {
     // Calculate remaining income after expenses
     const workingBudget = income - totalExpenses;
 
+    // Display the total expenses on the page
+    document.getElementById('totalExpenses').textContent = `$${totalExpenses.toFixed(2)}`;
+
+    return totalExpenses;
+}
+
+// Function to calculate the working budget
+function calculateWorkingBudget(formData, totalExpenses) {
+    if (!formData || !formData.income) {
+        console.log('No income data found to calculate working budget.');
+        return 0;
+    }
+
+    const income = parseFloat(formData.income) || 0;
+
+    // Calculate remaining income after expenses
+    const workingBudget = income - totalExpenses;
+
+    // Display the working budget on the page
+    document.getElementById('workingBudget').textContent = `$${workingBudget.toFixed(2)}`;
+
+    return workingBudget;
     // Display the working budget on the page
     document.getElementById('workingBudget').textContent = `$${workingBudget.toFixed(2)}`;
 
     return workingBudget;
 }
+
+// Function to calculate and display save per month
+function calculateSavePerMonth(formData) {
+    if (!formData || !formData.goals) {
+        console.log('No goal data found.');
+        return;
+    }
+
+    const goalAmount = parseFloat(formData.goals.goalAmount) || 0;
+    const months = parseInt(formData.goals.months) || 1;  // Avoid division by zero by setting default to 1
+
+    console.log('Goal amount:', goalAmount);
+    console.log('Months:', months);
+
+    // Calculate save per month
+    const savePerMonth = goalAmount / months;
+
+    console.log('Save Per Month:', savePerMonth);
+
+    // Display the save per month on the page
+    document.getElementById('goal-cost').textContent = `$${savePerMonth.toFixed(2)}`;
+}
+
+// Page Initialization on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function () {
+    // Retrieve the form data from localStorage
+    const formData = JSON.parse(localStorage.getItem('formData'));
+
+    if (formData) {
+        // Display the stored form data
+        displayFormData(formData);
+
+        // Calculate total expenses
+        const totalExpenses = calculateTotalExpenses(formData);
+
+        // Calculate the working budget
+        calculateWorkingBudget(formData, totalExpenses);
+
+        calculateSavePerMonth(formData);
+    } else {
+        console.log('No form data found.');
+    }
+});
+
 
 // Function to calculate and display save per month
 function calculateSavePerMonth(formData) {
