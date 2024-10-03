@@ -21,7 +21,7 @@ function getNumericInput(id, fieldName) {
 }
 
 // Function to combine form data into an object
-function buildFormData({ income, rent, utilities, groceries, gas, carInsurance, homeInsurance, lifeInsurance, subscribe, other, goalName, goalAmount, months, additionalExpenses }) {
+function buildFormData({ income, rent, utilities, groceries, gas, carInsurance, homeInsurance, lifeInsurance, subscribe, other, goals, additionalExpenses }) {
     return {
         income,
         expenses: {
@@ -38,10 +38,6 @@ function buildFormData({ income, rent, utilities, groceries, gas, carInsurance, 
             other,
             additional: additionalExpenses
         },
-        goals: {
-            goalName,
-            goalAmount,
-            months
-        }
+        goals: goals || []
     };
 }
