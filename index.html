@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainy Day Fund</title>
 
 
-    <!-- <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/form.css" /> -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/form.css" />
 
-    
+
     <script defer src="./assets/JS/logic.js" type="text/javaScript"></script>
     <script defer src="./assets/js/form.js" type="text/javaScript"></script>
 </head>
@@ -20,25 +21,27 @@
     <header>
 
         <h1 class="title">Rainy Day Fund</h1>
-        <h2 class="subtitle">Enter income, any expenses, and any goals you might have.</h2>
+        <div class="infoBar">
+            <h2 class="subtitle">Enter income, any expenses, and any goals you might have.</h2>
 
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <!-- Add any branding here if needed -->
-                </a>
-        
-                <!-- Modal trigger button in the right corner -->
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <button class="button is-info" id="modal-button">
-                            <i class="fas fa-info-circle"></i>
-                        </button>
+            <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        
+                    </a>
+
+                   
+                    <div class="navbar-end">
+                        <div class="navbar-item"> -->
+                            <button class="button is-info" id="modal-button">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        <!-- </div>
                     </div>
                 </div>
-            </div>
-         </nav>
-        
+            </nav> -->
+        </div>
+
         <!-- Bulma modal component -->
         <div class="modal" id="info-modal">
             <div class="modal-background"></div>
@@ -46,7 +49,9 @@
                 <!-- Modal content -->
                 <div class="box">
                     <h3 class="title">Form Explanation</h3>
-                    <p>This form helps you manage and track your monthly budget, including income, expenses, and financial goals. Please enter your monthly income, specify your expenses, and define your financial goals with an estimated number of months to achieve them.</p>
+                    <p>This form helps you manage and track your monthly budget, including income, expenses, and
+                        financial goals. Please enter your monthly income, specify your expenses, and define your
+                        financial goals with an estimated number of months to achieve them.</p>
                     <p>Directions:</p>
                     <ul>
                         <li>1. Enter your monthly income in the respective field.</li>
@@ -58,94 +63,118 @@
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
         </div>
-        
 
-        
+
+
     </header>
 
     <main>
         <aside>
-            <h3>Enter your monthly income.</h3>
-            <form id="income">
-                <label for="monthly-income">Monthly Income</label>
-                <input type="number" id="monthly-income"/>
-                <div class="error-message" id="income-error"></div>
-            </form>
+            <section class="card" id="incomeCard">
+                <h3>Enter your monthly income.</h3>
+                <form id="income">
+                    <label for="monthly-income">Monthly Income</label>
+                    <br>
+                    <input type="number" id="monthly-income" />
+                    <div class="error-message" id="income-error"></div>
+                </form>
+            </section>
 
-            <h3>Enter your monthly expenses.</h3>
-            <form id="expense">
-                <label for="rent">Rent</label>
-                <input type="number" id="rent" />
-                <div class="error-message" id="rent-error"></div>
+            <section class="card" id="expenseCard">
+                <h3>Enter your monthly expenses.</h3>
+                <form id="expense">
+                    <label for="rent">Rent</label>
+                    <br>
+                    <input type="number" id="rent" />
+                    <div class="error-message" id="rent-error"></div>
 
-                <label for="util">Utilities</label>
-                <input type="number" id="util" />
-                <div class="error-message" id="util-error"></div>
+                    <label for="util">Utilities</label>
+                    <br>
+                    <input type="number" id="util" />
+                    <div class="error-message" id="util-error"></div>
 
-                <label for="food">Groceries</label>
-                <input type="number" id="food" />
-                <div class="error-message" id="food-error"></div>
+                    <label for="food">Groceries</label>
+                    <br>
+                    <input type="number" id="food" />
+                    <div class="error-message" id="food-error"></div>
 
-                <label for="gas">Gas/Trasportation</label>
-                <input type="number" id="gas" />
-                <div class="error-message" id="gas-error"></div>
+                    <label for="gas">Gas/Trasportation</label>
+                    <br>
+                    <input type="number" id="gas" />
+                    <div class="error-message" id="gas-error"></div>
 
-                <details id="insurance-details">
-                    <summary id="insurance-summary">Insurance</summary>
-                    <div class="dropdown-insurance">
-                        <label for="car-insurance">Car Insurance</label>
-                        <input type="number" id="car-insurance" />
-                        <div class="error-message" id="car-insurance-error"></div>
+                    <label for="subscribe">Subscriptions</label>
+                    <br>
+                    <input type="number" id="subscribe" />
+                    <div class="error-message" id="subscribe-error"></div>
 
-                        <label for="home-insurance">Home Insurance</label>
-                        <input type="number" id="home-insurance" />
-                        <div class="error-message" id="home-insurance-error"></div>
+                    <details id="insurance-details">
+                        <summary id="insurance-summary">Insurance</summary>
+                        <div class="dropdown-insurance">
+                            <label for="car-insurance">Car Insurance</label>
+                            <br>
+                            <input type="number" id="car-insurance" />
+                            <div class="error-message" id="car-insurance-error"></div>
 
-                        <label for="life-insurance">Life Insurance</label>
-                        <input type="number" id="life-insurance" />
-                        <div class="error-message" id="life-insurance-error"></div>
-                    </div>
-                </details>
+                            <label for="home-insurance">Home Insurance</label>
+                            <br>
+                            <input type="number" id="home-insurance" />
+                            <div class="error-message" id="home-insurance-error"></div>
 
-                <label for="subscribe">Subscriptions</label>
-                <input type="number" id="subscribe" />
-                <div class="error-message" id="subscribe-error"></div>
+                            <label for="life-insurance">Life Insurance</label>
+                            <br>
+                            <input type="number" id="life-insurance" />
+                            <div class="error-message" id="life-insurance-error"></div>
+                        </div>
+                    </details>
 
-                <label for="other">Other</label>
-                <input type="number" id="other" />
-                <div class="error-message" id="other-error"></div>
 
-                <!--Add more expenses button goes here-->
-                <div id="additional-expenses"></div>
-                
-                <button type="button" id="add-expense-btn">Add More Expenses</button>
 
-                <!-- Conatiner for added expenses -->
+                    <label for="other">Other</label>
+                    <br>
+                    <input type="number" id="other" />
+                    <div class="error-message" id="other-error"></div>
 
-                <!-- TODO: make additional expenses populate above button -->
-            </form>
+                    <!--Add more expenses button goes here-->
+                    <div id="additional-expenses"></div>
+
+                    <button type="button" id="add-expense-btn">+ Add More Expenses</button>
+
+                    <!-- Conatiner for added expenses -->
+
+                    <!-- TODO: make additional expenses populate above button -->
+                </form>
+            </section>
         </aside>
 
         <div class="right-section">
-            <h3>Enter your financial goals.</h3>
-            <form id="goals-form">
-                <label for="goal">Goal Name</label>
-                <input type="text" id="goal" />
-                <div class="error-message" id="goal-error"></div>
+            <section class="card" id="goalsCard">
+                <h3>Enter your financial goals.</h3>
+                <form id="goals-form">
+                    <label for="goal">Goal Name</label>
+                    <br>
+                    <input type="text" id="goal" />
+                    <div class="error-message" id="goal-error"></div>
 
-                <label for="goal-amount">Goal Amount</label>
-                <input type="number" id="goal-amount" />
-                <div class="error-message" id="goal-amount-error"></div>
+                    <label for="goal-amount">Goal Amount</label>
+                    <br>
+                    <input type="number" id="goal-amount" />
+                    <div class="error-message" id="goal-amount-error"></div>
 
-                <label for="months">How many months?</label>
-                <input type="number" id="months" />
-                <div class="error-message" id="months-error"></div>
-            </form>
+                    <label for="months">How many months?</label>
+                    <br>
+                    <input type="number" id="months" />
+                    <div class="error-message" id="months-error"></div>
+
+                    <button type="button" id="submit-all-btn">Submit All</button>
+                </form>
+            </section>
         </div>
+
     </main>
 
     <footer>
-        <button type="button" id="submit-all-btn">Submit All</button>
+
     </footer>
 </body>
 

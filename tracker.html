@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/tracker.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
 
     <script defer src="./assets/js/logic.js" type="text/javaScript"></script>
     <script defer src="./assets/js/tracker.js" type="text/javaScript"></script>
@@ -58,21 +60,21 @@
 
                 <br>
               
-                <button class="button" id="addExpenseBtn">Add Expense</button>
+                <button class="button" id="addExpenseBtn">+ Add Expense</button>
                 <br>
                 <br>
 
 
-                <h2>Total Expenses</h2>
+                <h2></h2>
                 <section>
-                    <label for="totalExpenses">Total Expenses: </label>
-                    <span id="totalExpenses">$0.00</span>
+                    <label class="totals" for="totalExpenses">Total Expenses: </label>
+                    <span class="totals" id="totalExpenses">$0.00</span>
                 </section>
-
-                <h2>Working Budget</h2>
+                <br>
+                <h2></h2>
                 <section>
-                    <label for="workingBudget">Working Budget: </label>
-                    <span id="workingBudget">$0.00</span>
+                    <label class="totals" for="workingBudget">Working Budget: </label>
+                    <span class="totals" id="workingBudget">$0.00</span>
                 </section>
             </section>
         </aside>
@@ -84,7 +86,7 @@
                 <p>In order to reach your savings goal of <span id="goal-amount">goal cost</span> towards your <span id="goal-name">goal name</span> you will need to save <span id="goal-cost">monthly cost</span> for <span id="goal-months">goal time</span> months.</p>
                 <br>
                 <button class="button" id="addGoalBtn">Add New Goal</button>
-          
+
         </section>
         
 
