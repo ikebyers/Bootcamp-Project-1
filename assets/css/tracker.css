@@ -6,21 +6,27 @@
 #expenses-details {
     margin-bottom: 1rem;
 }
-/* No special styles for summary */
+
 #expenses-summary {
     font-size: 1.5rem;
     font-weight: bold;
-    cursor: pointer; /* This helps visually indicate it's clickable */
+    cursor: pointer;
 }
 .dropdown-expenses {
     padding-left: 15px;
     margin-top: 0.5rem;
 }
 
+main {
+    display: flex;
+}
+
+aside {
+    width: 50%;
+}
+
 body {
     background-color: var(--white);
-    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 400 !important;
 }
 
 h1 {
@@ -30,6 +36,7 @@ h1 {
     color: var(--white) !important;
     margin: 1rem 0 !important;
     padding: 20px;
+    box-shadow: 5px 5px 10px rgb(34, 34, 34) !important;
 }
 
 .card  {
@@ -42,6 +49,7 @@ h1 {
     font-weight: 400;
     padding: 20px;
     border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(34, 34, 34) !important;
 }
 
 .dropdownExpenses p {
@@ -63,10 +71,66 @@ h1 {
 } */
 
 .totals {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+} 
+
+.totals {
     font-size: 2rem;
 }
 
 #incomeHeader, #expensesSummary {
     font-size: 2rem;
     margin-bottom: .75rem;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    color: rgb(61, 61, 61) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 5px 5px gray !important;
+}
+
+#editIncomeBtn {
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: rgb(62, 142,208);
+    transition: all .25s ease-in-out;
+}
+
+#expensesSummary:hover {
+    cursor: pointer;
+}
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media all and (max-width: 768px) {
+   
+    main {
+        flex-direction: column;
+    }
+
+   aside {
+    width: 100%;
+   }
 }

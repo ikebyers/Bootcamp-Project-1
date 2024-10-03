@@ -4,7 +4,6 @@ document.getElementById('add-expense-btn').addEventListener('click', function() 
     
     if (expenseName) {
         // Create a new label element for the new expense
-
         const newLabel = document.createElement('label');
         newLabel.setAttribute('for', expenseName.toLowerCase().replace(/\s+/g, '-'));
         newLabel.textContent = expenseName;
@@ -20,6 +19,8 @@ document.getElementById('add-expense-btn').addEventListener('click', function() 
         additionalExpensesContainer.appendChild(newLabel);
         additionalExpensesContainer.appendChild(newInput);
         console.log('Added new expense.');
+
+
     } else {
         alert("No expense name entered. Please try again.");
     }
@@ -32,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (submitBtn) {
         submitBtn.addEventListener('click', function() {
+
+            alert('Button has been clicked')
 
             let isValid = true;
 
@@ -73,10 +76,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
 
+            
+
+            const additionalExpensesContainer = document.getElementById('additional-expenses');
+            const additionalExpenses = [];
+            const expenseInputs = additionalExpensesContainer.querySelectorAll('input[type="number"]');
+
+            expenseInputs.forEach(input => {
+                const expenseName = input.id.replace(/-/g, ' ');
+                const expenseValue = parseFloat(input.value) || 0;
+                additionalExpenses.push({ name: expenseName, amount: expenseValue });
+            });
+
+            // debugging
+            // alert('Form is being validated')
+
+            console.log('is the form valid:', isValid);
+
             if (isValid) {
                 const formData = buildFormData({
-                    income, rent, utilities, groceries, gas, carInsurance, homeInsurance, lifeInsurance, subscribe, other, goalName, goalAmount, months
+                    income, rent, utilities, groceries, gas, carInsurance, homeInsurance, lifeInsurance, subscribe, other, goalName, goalAmount, months, additionalExpenses
                 });
+
+                alert("Form is valid")
 
                 localStorage.setItem('formData', JSON.stringify(formData));
                 console.log('Form submitted and data saved!');
