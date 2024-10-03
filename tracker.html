@@ -8,9 +8,6 @@
 
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/tracker.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
-
     <script defer src="./assets/js/logic.js" type="text/javaScript"></script>
     <script defer src="./assets/js/tracker.js" type="text/javaScript"></script>
 </head>
@@ -24,9 +21,6 @@
     <main>
         <aside class="aside">
             <section class="card">
-                <!-- <h2 class="headerTwo" id="incomeHeader">Income</h2>
-                <label for="monthlyIncome">Monthly Income:</label>
-                <p id="monthlyIncome"></p> -->
                 <section>
                     <label class="totals" for="monthlyIncome">Monthly Income: </label>
                     <span class="totals" id="monthlyIncome">$0.00</span>
@@ -82,12 +76,12 @@
         </aside>
 
         <section class="card">
-            <h2>Goals</h2>
+            <h2 class="totals" id="goalsList">Goals List</h2>
             <div id="goalList"></div>
                 <button class="button" id="addGoalBtn">Add New Goal</button>
 
         </section>
-        
+
 
     </main>
 
