@@ -7,25 +7,23 @@ document.getElementById('add-expense-btn').addEventListener('click', function() 
         const newLabel = document.createElement('label');
         newLabel.setAttribute('for', expenseName.toLowerCase().replace(/\s+/g, '-'));
         newLabel.textContent = expenseName;
-
+        newLabel.classList.add('expense-label');
 
         const newInput = document.createElement('input');
         newInput.setAttribute('type', 'number');
         newInput.setAttribute('id', expenseName.toLowerCase().replace(/\s+/g, '-'));
         newInput.setAttribute('placeholder', `Enter amount for ${expenseName}`);
-
+        newInput.classList.add('expense-input');
 
         const additionalExpensesContainer = document.getElementById('additional-expenses');
         additionalExpensesContainer.appendChild(newLabel);
         additionalExpensesContainer.appendChild(newInput);
         console.log('Added new expense.');
 
-
     } else {
         alert("No expense name entered. Please try again.");
     }
 });
-
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -119,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
 
 // Modal button and modal elements
 const modalButton = document.getElementById('modal-button');

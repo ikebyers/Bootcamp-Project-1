@@ -19,9 +19,20 @@
 
 main {
     display: flex;
+    justify-content: center;
 }
 
 aside {
+    width: 50%;
+}
+
+#left-box {
+    /* width: 75%; */
+    margin-left: 15px;
+}
+
+#goals-box {
+    margin-right: 15px;
     width: 50%;
 }
 
@@ -50,6 +61,7 @@ h1 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgb(34, 34, 34) !important;
+    /* width: 50%; */
 }
 
 .dropdownExpenses p {
@@ -60,20 +72,6 @@ h1 {
     text-align: right;
     padding: 3px;
 }
-
-/* #monthlyIncome {
-    background-color: white;
-    color: black;
-    width: 13rem;
-    margin: 10px;
-    text-align: right;
-    padding: 3px;
-} */
-
-/* .totals {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-}  */
 
 .totals {
     font-size: 2rem;
@@ -126,8 +124,24 @@ hr {
 }
 
 #goalsList {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
+
+#goals-list-line {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.tracker-expense-cost {
+    background-color: white;
+    color: black;
+    width: 13rem;
+    margin: 10px;
+    text-align: right;
+    padding: 3px;
+}
+
+
 
 body,
 button,
@@ -142,9 +156,15 @@ textarea {
    
     main {
         flex-direction: column;
+        width: 100%;
+        flex-flow: wrap;
     }
 
    aside {
+    width: 100%;
+   }
+
+   #goals-box {
     width: 100%;
    }
 }

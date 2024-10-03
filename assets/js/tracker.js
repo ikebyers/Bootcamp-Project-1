@@ -21,9 +21,12 @@ function displayFormData(formData) {
             formData.expenses.additional.forEach(expense => {
                 let expenseLabel = document.createElement('label');
                 expenseLabel.textContent = `${expense.name}:`;
-                let expenseValue = document.createElement('p');
+                expenseLabel.classList.add('tracker-expense-label')
 
+                let expenseValue = document.createElement('p');
                 expenseValue.textContent = `$${expense.amount.toFixed(2)}`;
+                expenseValue.classList.add('tracker-expense-cost')
+
                 expensesDetail.appendChild(expenseLabel);
                 expensesDetail.appendChild(expenseValue);
             });
@@ -94,13 +97,9 @@ document.addEventListener('DOMContentLoaded', function () {
     displayGoalsFromLocalStorage();
 });
 
-
-
 // Event listener/button for editing the income
 document.getElementById('editIncomeBtn').addEventListener('click', function() {
-    const incomeInput = document.getElementById('enterIncome');
-    console.log(incomeInput.value);
-    let newIncome = incomeInput.value;
+    let newIncome = prompt("Enter you new monthly income:");
     if (newIncome && !isNaN(newIncome)) {
         let formDataLocal = JSON.parse(localStorage.getItem('formData')) || {};
         formDataLocal.income = parseFloat(newIncome);
@@ -108,10 +107,6 @@ document.getElementById('editIncomeBtn').addEventListener('click', function() {
 
         // Update the displayed income in the webpage
         document.getElementById('monthlyIncome').textContent = `$${newIncome}`;
-        // document.getElementById('testIncome').innerHTML = `
-        // <h2 class="headerTwo" id="incomeHeader">Income</h2>
-        // <p id="monthlyIncome" class="totals" for="totalIncome">$${newIncome}</p>
-        // `;
         const totalExpenses = calculateTotalExpenses(formDataLocal); 
         calculateWorkingBudget(formDataLocal, totalExpenses); 
     } else {
@@ -140,8 +135,13 @@ document.getElementById('addExpenseBtn').addEventListener('click', function() {
         // Update the page to display the new expense
         let expenseLabel = document.createElement('label');
         expenseLabel.textContent = `${expenseName}:`;
+        expenseLabel.classList.add('tracker-expense-label');
+
         let expenseValue = document.createElement('p');
         expenseValue.textContent = `$${parseFloat(expenseAmount).toFixed(2)}`;
+        expenseValue.classList.add('tracker-expense-cost');
+
+        console.log('Class added to input:', expenseValue.classList.contains('tracker-expense-cost'));
 
         const expensesDetail = document.getElementById('expensesDetail');
         expensesDetail.appendChild(expenseLabel);
@@ -191,24 +191,6 @@ function calculateWorkingBudget(formData, totalExpenses) {
     return workingBudget;
 }
 
-
-// Function to calculate and display save per month
-function calculateSavePerMonth(formData) {
-    if (!formData || !formData.goals) {
-        console.log('No goal data found.');
-        return;
-    }
-
-    const goalAmount = parseFloat(formData.goals.goalAmount) || 0;
-    const months = Number(formData.goals.months) || 1;
-    console.log('Goal amount:', goalAmount);
-    console.log('Months:', months);
-    const savePerMonth = goalAmount / months;
-    console.log('Save Per Month:', savePerMonth);
-    document.getElementById('goal-cost').textContent = `$${savePerMonth.toFixed(2)}`;
-    
-}
-
 // Page Initialization #2
 document.addEventListener('DOMContentLoaded', function () {
     const formData = JSON.parse(localStorage.getItem('formData'));
@@ -216,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayFormData(formData);
         const totalExpenses = calculateTotalExpenses(formData);
         calculateWorkingBudget(formData, totalExpenses);
-        calculateSavePerMonth(formData);
+        // calculateSavePerMonth(formData);
     } else {
         console.log('No form data found.');
     }
