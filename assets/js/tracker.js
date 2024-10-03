@@ -13,7 +13,7 @@ function displayFormData(formData) {
         document.getElementById('life-insurance').textContent = `$${formData.expenses.insurance.lifeInsurance || 0}`;
         document.getElementById('subscriptions').textContent = `$${formData.expenses.subscribe || 0}`;
         document.getElementById('other').textContent = `$${formData.expenses.other || 0}`;
-        
+      
 
         // append and display elements onto the HTML
         const expensesDetail = document.getElementById('expensesDetail');
@@ -96,9 +96,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 // Event listener/button for editing the income
 document.getElementById('editIncomeBtn').addEventListener('click', function() {
-    let newIncome = prompt("Enter your new monthly income:");
+    const incomeInput = document.getElementById('enterIncome');
+    console.log(incomeInput.value);
+    let newIncome = incomeInput.value;
     if (newIncome && !isNaN(newIncome)) {
         let formDataLocal = JSON.parse(localStorage.getItem('formData')) || {};
         formDataLocal.income = parseFloat(newIncome);
@@ -106,6 +109,10 @@ document.getElementById('editIncomeBtn').addEventListener('click', function() {
 
         // Update the displayed income in the webpage
         document.getElementById('monthlyIncome').textContent = `$${newIncome}`;
+        // document.getElementById('testIncome').innerHTML = `
+        // <h2 class="headerTwo" id="incomeHeader">Income</h2>
+        // <p id="monthlyIncome" class="totals" for="totalIncome">$${newIncome}</p>
+        // `;
         const totalExpenses = calculateTotalExpenses(formDataLocal); 
         calculateWorkingBudget(formDataLocal, totalExpenses); 
     } else {
