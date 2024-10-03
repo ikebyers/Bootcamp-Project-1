@@ -53,14 +53,14 @@ h1 {
     padding: 3px;
 }
 
-#monthlyIncome {
+/* #monthlyIncome {
     background-color: white;
     color: black;
     width: 13rem;
     margin: 10px;
     text-align: right;
     padding: 3px;
-}
+} */
 
 .totals {
     font-size: 2rem;

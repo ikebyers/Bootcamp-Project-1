@@ -55,10 +55,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to append a goal to the DOM
     function appendGoalToDOM(goal) {
         const goalElement = document.createElement('div');
+        const monthlySavings = (goal.goalAmount / goal.months).toFixed(2);
         goalElement.innerHTML = `
-            <p><strong>Goal:</strong> ${goal.goalName}</p>
-            <p><strong>Amount:</strong> $${goal.goalAmount}</p>
-            <p><strong>Time (months):</strong> ${goal.months}</p>
+            <p><strong>Goal Name:</strong> ${goal.goalName}</p>
+            <p><strong>Total Cost:</strong> $${goal.goalAmount}</p>
+            <p><strong>Time Frame:</strong> ${goal.months}</p>
+            <p><strong>To reach your goal, you should save: </strong>$${monthlySavings} per month</p>
             <hr>
         `;
         goalList.appendChild(goalElement);
@@ -97,9 +99,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 // Event listener/button for editing the income
 document.getElementById('editIncomeBtn').addEventListener('click', function() {
-    let newIncome = prompt("Enter your new monthly income:");
+    const incomeInput = document.getElementById('enterIncome');
+    console.log(incomeInput.value);
+    let newIncome = incomeInput.value;
     if (newIncome && !isNaN(newIncome)) {
         let formDataLocal = JSON.parse(localStorage.getItem('formData')) || {};
         formDataLocal.income = parseFloat(newIncome);
@@ -107,6 +112,10 @@ document.getElementById('editIncomeBtn').addEventListener('click', function() {
 
         // Update the displayed income in the webpage
         document.getElementById('monthlyIncome').textContent = `$${newIncome}`;
+        // document.getElementById('testIncome').innerHTML = `
+        // <h2 class="headerTwo" id="incomeHeader">Income</h2>
+        // <p id="monthlyIncome" class="totals" for="totalIncome">$${newIncome}</p>
+        // `;
         const totalExpenses = calculateTotalExpenses(formDataLocal); 
         calculateWorkingBudget(formDataLocal, totalExpenses); 
     } else {
@@ -186,19 +195,19 @@ function calculateWorkingBudget(formData, totalExpenses) {
     return workingBudget;
 }
 
-// Page Initialization
-document.addEventListener('DOMContentLoaded', function () {
-    const formData = JSON.parse(localStorage.getItem('formData'));
+// // Page Initialization
+// document.addEventListener('DOMContentLoaded', function () {
+//     const formData = JSON.parse(localStorage.getItem('formData'));
 
-    if (formData) {
-        displayFormData(formData);
-        const totalExpenses = calculateTotalExpenses(formData);
-        calculateWorkingBudget(formData, totalExpenses);
-        calculateSavePerMonth(formData);
-    } else {
-        console.log('No form data found.');
-    }
-});
+//     if (formData) {
+//         displayFormData(formData);
+//         const totalExpenses = calculateTotalExpenses(formData);
+//         calculateWorkingBudget(formData, totalExpenses);
+//         calculateSavePerMonth(formData);
+//     } else {
+//         console.log('No form data found.');
+//     }
+// });
 
 // Function to calculate and display save per month
 function calculateSavePerMonth(formData) {
