@@ -19,11 +19,13 @@ function displayFormData(formData) {
 
         // append and display elements onto the HTML
         const expensesDetail = document.getElementById('expensesDetail');
+
         if (formData.expenses.additional && formData.expenses.additional.length > 0) {
             formData.expenses.additional.forEach(expense => {
                 let expenseLabel = document.createElement('label');
                 expenseLabel.textContent = `${expense.name}:`;
                 let expenseValue = document.createElement('p');
+
                 expenseValue.textContent = `$${expense.amount.toFixed(2)}`;
                 expensesDetail.appendChild(expenseLabel);
                 expensesDetail.appendChild(expenseValue);
@@ -186,19 +188,6 @@ function calculateWorkingBudget(formData, totalExpenses) {
     return workingBudget;
 }
 
-// Page Initialization
-// document.addEventListener('DOMContentLoaded', function () {
-//     const formData = JSON.parse(localStorage.getItem('formData'));
-
-//     if (formData) {
-//         displayFormData(formData);
-//         const totalExpenses = calculateTotalExpenses(formData);
-//         calculateWorkingBudget(formData, totalExpenses);
-//         calculateSavePerMonth(formData);
-//     } else {
-//         console.log('No form data found.');
-//     }
-// });
 
 // Function to calculate and display save per month
 function calculateSavePerMonth(formData) {
