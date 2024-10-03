@@ -115,6 +115,14 @@ h1 {
     cursor: pointer;
 }
 
+#enterIncome {
+    margin-top: 10px;
+}
+
+#goalsList {
+    margin-bottom: 8px;
+}
+
 body,
 button,
 input,
