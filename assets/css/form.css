@@ -21,6 +21,15 @@ h1 {
     color: var(--white) !important;
     margin: 1rem 0 !important;
     padding: 20px !important;
+    box-shadow: 5px 5px 10px rgb(34, 34, 34) !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+}
+
+h3 {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    font-size: 2rem !important;
 }
 
 .infoBar {
@@ -29,17 +38,20 @@ h1 {
 }
 
 .subtitle {
-    text-align: center;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 0 !important;
 }
 
-.card  {
+.card {
     border: 2px;
     margin: 1rem;
     background-color: var(--blue) !important;
-    padding: .5rem;
+    padding: 20px;
     color: var(--white) !important;
     font-size: 1.5rem;
     border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(34, 34, 34) !important;
 }
 
 main {
@@ -53,4 +65,56 @@ aside {
 
 .right-section {
     width: 50%;
+}
+
+#add-expense-btn,
+#submit-all-btn {
+    background-color: white;
+    border: none;
+    color: rgb(61, 61, 61) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2rem 2px 0 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 5px 5px gray !important;
+}
+
+#add-expense-btn:hover,
+#submit-all-btn:hover {
+    background-color: rgb(62, 142, 208);
+    transition: all .25s ease-in-out;
+}
+
+
+
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+@media all and (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    .right-section {
+        width: 100%;
+    }
+
+    aside {
+        width: 100%;
+    }
 }
