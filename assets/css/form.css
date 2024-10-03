@@ -91,6 +91,30 @@ aside {
     transition: all .25s ease-in-out;
 }
 
+#additional-expenses .card {
+    background-color: #273a4e !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+
+#additional-expenses .expense-label {
+    display: block !important;
+    margin-top: 10px !important;
+    color: #ffffff !important;
+}
+
+#additional-expenses input.expense-input {
+   margin: 0;
+   padding-block: 1px;
+   padding-inline: 2px;
+   display: inline-block;
+}
+
+input::placeholder {
+    color: transparent; /* Make placeholder disappear */
+}
+
 
 
 
