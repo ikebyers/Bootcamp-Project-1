@@ -13,10 +13,6 @@ function displayFormData(formData) {
         document.getElementById('life-insurance').textContent = `$${formData.expenses.insurance.lifeInsurance || 0}`;
         document.getElementById('subscriptions').textContent = `$${formData.expenses.subscribe || 0}`;
         document.getElementById('other').textContent = `$${formData.expenses.other || 0}`;
-        document.getElementById('goal-name').textContent = `${formData.goals.goalName || 0}`;
-        document.getElementById('goal-amount').textContent = `$${formData.goals.goalAmount || 0}`;
-        document.getElementById('goal-months').textContent = `${formData.goals.months || 0}`;
-        document.getElementById('goal-time').textContent = `${formData.goals.months || 0}`;
 
         // append and display elements onto the HTML
         const expensesDetail = document.getElementById('expensesDetail');
@@ -47,12 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Clear the goalList before adding goals from localStorage
         goalList.innerHTML = '';
 
-        // storedFormData.goals.forEach(goal => {
-        //     appendGoalToDOM(goal);
-        // });
-        for (let i = 0; i <= storedFormData.goals.length; i++) {
-            appendGoalToDOM(storedFormData.goals[i]);
-        }
+        storedFormData.goals.forEach(goal => {
+            appendGoalToDOM(goal);
+        });
     }
 
     // Function to append a goal to the DOM
@@ -60,10 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const goalElement = document.createElement('div');
         const monthlySavings = (goal.goalAmount / goal.months).toFixed(2);
         goalElement.innerHTML = `
-            <p><strong>Name:</strong> ${goal.goalName}</p>
-            <p><strong>Total Cost:</strong> $${goal.goalAmount}</p>
-            <p><strong>Time Frame:</strong> ${goal.months}</p>
-            <p><strong>To reach your goal, you should save </strong>$${monthlySavings} per month, for ${goal.months} months!</p>
+            <p><strong>Goal:</strong> ${goal.goalName}</p>
+            <p><strong>Amount:</strong> $${goal.goalAmount}</p>
+            <p><strong>Time (months):</strong> ${goal.months}</p>
+            <p><strong>To reach your goal, you should save </stong>$${monthlySavings} per month, for ${goal.months} months!</p>
             <hr>
         `;
         goalList.appendChild(goalElement);

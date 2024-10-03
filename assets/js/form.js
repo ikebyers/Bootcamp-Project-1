@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (submitBtn) {
         submitBtn.addEventListener('click', function() {
 
-            alert('Button has been clicked')
+            // alert('Button has been clicked')
 
             let isValid = true;
 
@@ -58,15 +58,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
             const goalInput = document.getElementById('goal');
-            let goalName = '';
+            let goals = [];
 
             if (goalInput) {
-                goalName = document.getElementById('goal').value.trim();
+                // goalName = document.getElementById('goal').value.trim();
+                let goalName = goalInput.value.trim();
                 if (goalName === "") {
                     document.getElementById('goal-error').textContent = "Please enter a goal name.";
                     isValid = false;
                 } else {
-                    console.log('Goal name:', goalName);
+                    // console.log('Goal name:', goalName);
+                    goals.push({
+                        goalName,
+                        goalAmount,
+                        months
+                    });
+
+                    console.log('Goal added:', {goalName, goalAmount, months });
                 }
 
             }
@@ -95,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (isValid) {
                 const formData = buildFormData({
-                    income, rent, utilities, groceries, gas, carInsurance, homeInsurance, lifeInsurance, subscribe, other, goalName, goalAmount, months, additionalExpenses
+                    income, rent, utilities, groceries, gas, carInsurance, homeInsurance, lifeInsurance, subscribe, other, goals, additionalExpenses
                 });
 
-                alert("Form is valid")
+                // alert("Form is valid")
 
                 localStorage.setItem('formData', JSON.stringify(formData));
                 console.log('Form submitted and data saved!');
