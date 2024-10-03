@@ -52,7 +52,6 @@
                         <p id="subscriptions"></p>
                         <label for="other">Other:</label>
                         <p id="other"></p>
-                        <!-- TODO: make sure any additional "other" expenses populate above the "Add Expense" button -->
                     </div>  
                     
                 </details>
@@ -80,13 +79,14 @@
 
         <section class="card">
             <h2>Goals</h2>
-            <label><span id="goalOne">Goal One:</span></label>
-            <p>In order to reach your savings goal of <span id="goal-amount">goal cost</span>, you will need to save <span id="goal-cost">monthly cost</span> for <span id="goal-months">goal time</span> months.</p>
-            <br>
-            <button class="button" id="addGoalBtn">Add Goal</button>
+            <div id="goalList"></div>
+                <label><span id="goalOne">Goal One:</span></label>
+                <p>In order to reach your savings goal of <span id="goal-amount">goal cost</span> towards your <span id="goal-name">goal name</span> you will need to save <span id="goal-cost">monthly cost</span> for <span id="goal-months">goal time</span> months.</p>
+                <br>
+                <button class="button" id="addGoalBtn">Add New Goal</button>
+          
         </section>
-
-
+        
 
     </main>
 
